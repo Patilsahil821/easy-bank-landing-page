@@ -1,0 +1,151 @@
+#header-container {
+  position: relative;
+  width: 100%;
+  z-index: 2;
+  background-color: white;
+  #header {
+    display: flex;
+    justify-content: space-between;
+    height: 70px;
+    align-items: center;
+
+    ul {
+      padding: 0;
+      margin: 0;
+      display: flex;
+      align-items: flex-end;
+      align-self: flex-end;
+      li {
+        // width: 80px;
+        margin-right: 1.5rem;
+        height: 45px;
+        position: relative;
+        .animation-line {
+          position: absolute;
+          bottom: 0;
+          left: 0;
+          height: 3px;
+          background-color: $LimeGreen;
+        }
+
+        &::after {
+          content: '';
+          position: absolute;
+          bottom: 0;
+          width: 0;
+          height: 3px;
+          background-color: $LimeGreen;
+          left: 0;
+          transition: all 0.5s;
+        }
+        &:hover {
+          &::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            width: 100%;
+            height: 3px;
+            background-color: $LimeGreen;
+            left: 0;
+          }
+        }
+        a {
+          color: $GrayishBlue;
+          &:hover {
+            color: black;
+          }
+        }
+      }
+    }
+    button {
+      padding: 7px 18px;
+      border: 0;
+      outline: none;
+      background: linear-gradient(to right, $LimeGreen, $BrightCyan);
+      color: white;
+      border-radius: 20px;
+    }
+
+    @media screen and (max-width: 768px) {
+      ul,
+      .req-btn {
+        display: none;
+      }
+    }
+  }
+  .rotate-div {
+    position: absolute;
+    min-height: 230px;
+    width: 50%;
+    width: 300px;
+    // min-width: 200px;
+    display: none;
+    margin: 0 auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    top: 5rem;
+    left: 0;
+    right: 0;
+    background-color: white;
+    overflow: hidden;
+    display: none;
+
+    &::before {
+      content: '';
+      position: absolute;
+      top: -100%;
+      left: -100%;
+
+      margin: 0 auto;
+      width: 400%;
+      height: 400%;
+      background-image: conic-gradient(
+        $LimeGreen 0deg,
+        $LimeGreen 90deg,
+        $BrightCyan 90deg,
+        $BrightCyan 180deg,
+        $LimeGreen 180deg,
+        $LimeGreen 270deg,
+        $BrightCyan 270deg,
+        $BrightCyan 360deg
+      );
+      animation: example 2s linear infinite forwards;
+    }
+    @media screen and (min-width: 768px) {
+      display: none;
+    }
+
+    box-shadow: 0px 0px 100px 300px rgba(0, 0, 0, 0.6);
+    .res-menu {
+      position: absolute;
+      width: 96%;
+      height: 96%;
+      margin: 0 auto;
+      background-color: white;
+      padding: 1rem;
+
+      & {
+        ul {
+          margin: 0;
+          padding: 0;
+          li {
+            margin: 0;
+            padding: 0;
+            height: 30px;
+            text-align: center;
+            margin-bottom: 7px;
+          }
+        }
+      }
+    }
+  }
+}
+@keyframes example {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}

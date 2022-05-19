@@ -1,0 +1,57 @@
+#banner-container {
+  min-height: 500px;
+  display: flex;
+  justify-content: start;
+  align-items: center;
+  background-image: url('../images/bg-intro-desktop.svg');
+  background-size: calc(max(90%, 550px));
+  background-position: 487% 40%;
+  background-repeat: no-repeat;
+  background-color: $LightGrayishBlue;
+  position: relative;
+  @media screen and (max-width: 768px) {
+    background-image: url('../images/bg-intro-mobile.svg');
+    background-size: calc(max(100%, 375px));
+    background-repeat: no-repeat;
+    background-position: top;
+    min-height: 300px;
+  }
+
+  #banner {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    .banner-content {
+      h1 {
+        font-size: calc(max(3vw, 2rem));
+      }
+      button {
+        padding: 7px 24px;
+        border: 0;
+        outline: none;
+        background: linear-gradient(to right, $LimeGreen, $BrightCyan);
+        color: white;
+        border-radius: 20px;
+      }
+    }
+  }
+  .mockup {
+    position: absolute;
+    width: calc(min(45vw, 567px));
+    right: 0;
+    z-index: 1;
+    min-width: 440px;
+    @media screen and (max-width: 768px) {
+      & {
+        width: calc(min(100vw, 300px));
+        min-width: 375x;
+        min-width: unset;
+        top: -14%;
+        left: 0;
+        right: 0;
+        display: block;
+        margin: 0 auto;
+      }
+    }
+  }
+}

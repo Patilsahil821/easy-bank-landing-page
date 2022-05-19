@@ -1,0 +1,35 @@
+#easy-bank {
+  @media screen and (max-width: 768px) {
+    background-color: $LightGrayishBlue;
+  }
+  background-color: $White;
+
+  z-index: -1;
+  p {
+    color: $GrayishBlue;
+  }
+  .box-1 {
+    h2 {
+      margin: 1.2rem 0;
+      color: $DarkBlue;
+    }
+    p {
+      line-height: 1.5;
+    }
+  }
+
+  .box-2 {
+    img {
+      width: 60px;
+      height: 60px;
+    }
+    h4 {
+      margin: 1.2rem 0;
+      color: $DarkBlue;
+    }
+    p {
+      font-size: 0.9rem;
+      line-height: 1.5;
+    }
+  }
+}

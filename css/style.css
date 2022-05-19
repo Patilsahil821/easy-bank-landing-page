@@ -1,0 +1,317 @@
+a,
+li {
+  list-style: none;
+  text-decoration: none;
+  color: hsl(233deg, 8%, 62%);
+}
+
+body,
+main {
+  overflow-x: hidden;
+  margin: 0;
+  padding: 0;
+}
+
+main::-webkit-scrollbar {
+  display: none;
+}
+
+/* Hide scrollbar for IE, Edge and Firefox */
+main {
+  -ms-overflow-style: none;
+  /* IE and Edge */
+  scrollbar-width: none;
+  /* Firefox */
+}
+
+main #header-container {
+  position: relative;
+  width: 100%;
+  z-index: 2;
+  background-color: white;
+}
+main #header-container #header {
+  display: flex;
+  justify-content: space-between;
+  height: 70px;
+  align-items: center;
+}
+main #header-container #header ul {
+  padding: 0;
+  margin: 0;
+  display: flex;
+  align-items: flex-end;
+  align-self: flex-end;
+}
+main #header-container #header ul li {
+  margin-right: 1.5rem;
+  height: 45px;
+  position: relative;
+}
+main #header-container #header ul li .animation-line {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  height: 3px;
+  background-color: hsl(136deg, 65%, 51%);
+}
+main #header-container #header ul li::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  width: 0;
+  height: 3px;
+  background-color: hsl(136deg, 65%, 51%);
+  left: 0;
+  transition: all 0.5s;
+}
+main #header-container #header ul li:hover::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  height: 3px;
+  background-color: hsl(136deg, 65%, 51%);
+  left: 0;
+}
+main #header-container #header ul li a {
+  color: hsl(233deg, 8%, 62%);
+}
+main #header-container #header ul li a:hover {
+  color: black;
+}
+main #header-container #header button {
+  padding: 7px 18px;
+  border: 0;
+  outline: none;
+  background: linear-gradient(to right, hsl(136deg, 65%, 51%), hsl(192deg, 70%, 51%));
+  color: white;
+  border-radius: 20px;
+}
+@media screen and (max-width: 768px) {
+  main #header-container #header ul,
+main #header-container #header .req-btn {
+    display: none;
+  }
+}
+main #header-container .rotate-div {
+  position: absolute;
+  min-height: 230px;
+  width: 50%;
+  width: 300px;
+  display: none;
+  margin: 0 auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  top: 5rem;
+  left: 0;
+  right: 0;
+  background-color: white;
+  overflow: hidden;
+  display: none;
+  box-shadow: 0px 0px 100px 300px rgba(0, 0, 0, 0.6);
+}
+main #header-container .rotate-div::before {
+  content: "";
+  position: absolute;
+  top: -100%;
+  left: -100%;
+  margin: 0 auto;
+  width: 400%;
+  height: 400%;
+  background-image: conic-gradient(hsl(136deg, 65%, 51%) 0deg, hsl(136deg, 65%, 51%) 90deg, hsl(192deg, 70%, 51%) 90deg, hsl(192deg, 70%, 51%) 180deg, hsl(136deg, 65%, 51%) 180deg, hsl(136deg, 65%, 51%) 270deg, hsl(192deg, 70%, 51%) 270deg, hsl(192deg, 70%, 51%) 360deg);
+  animation: example 2s linear infinite forwards;
+}
+@media screen and (min-width: 768px) {
+  main #header-container .rotate-div {
+    display: none;
+  }
+}
+main #header-container .rotate-div .res-menu {
+  position: absolute;
+  width: 96%;
+  height: 96%;
+  margin: 0 auto;
+  background-color: white;
+  padding: 1rem;
+}
+main #header-container .rotate-div .res-menu ul {
+  margin: 0;
+  padding: 0;
+}
+main #header-container .rotate-div .res-menu ul li {
+  margin: 0;
+  padding: 0;
+  height: 30px;
+  text-align: center;
+  margin-bottom: 7px;
+}
+@keyframes example {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+main #banner-container {
+  min-height: 500px;
+  display: flex;
+  justify-content: start;
+  align-items: center;
+  background-image: url("../images/bg-intro-desktop.svg");
+  background-size: max(90%, 550px);
+  background-position: 487% 40%;
+  background-repeat: no-repeat;
+  background-color: hsl(220deg, 16%, 96%);
+  position: relative;
+}
+@media screen and (max-width: 768px) {
+  main #banner-container {
+    background-image: url("../images/bg-intro-mobile.svg");
+    background-size: max(100%, 375px);
+    background-repeat: no-repeat;
+    background-position: top;
+    min-height: 300px;
+  }
+}
+main #banner-container #banner {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+main #banner-container #banner .banner-content h1 {
+  font-size: max(3vw, 2rem);
+}
+main #banner-container #banner .banner-content button {
+  padding: 7px 24px;
+  border: 0;
+  outline: none;
+  background: linear-gradient(to right, hsl(136deg, 65%, 51%), hsl(192deg, 70%, 51%));
+  color: white;
+  border-radius: 20px;
+}
+main #banner-container .mockup {
+  position: absolute;
+  width: min(45vw, 567px);
+  right: 0;
+  z-index: 1;
+  min-width: 440px;
+}
+@media screen and (max-width: 768px) {
+  main #banner-container .mockup {
+    width: min(100vw, 300px);
+    min-width: 375x;
+    min-width: unset;
+    top: -14%;
+    left: 0;
+    right: 0;
+    display: block;
+    margin: 0 auto;
+  }
+}
+main #res-banner-container #res-banner h1 {
+  font-size: max(3vw, 2rem);
+}
+main #res-banner-container #res-banner .req-btn {
+  padding: 7px 24px;
+  border: 0;
+  outline: none;
+  background: linear-gradient(to right, hsl(136deg, 65%, 51%), hsl(192deg, 70%, 51%));
+  color: white;
+  border-radius: 20px;
+}
+main #easy-bank {
+  background-color: hsl(0deg, 0%, 100%);
+  z-index: -1;
+}
+@media screen and (max-width: 768px) {
+  main #easy-bank {
+    background-color: hsl(220deg, 16%, 96%);
+  }
+}
+main #easy-bank p {
+  color: hsl(233deg, 8%, 62%);
+}
+main #easy-bank .box-1 h2 {
+  margin: 1.2rem 0;
+  color: hsl(233deg, 26%, 24%);
+}
+main #easy-bank .box-1 p {
+  line-height: 1.5;
+}
+main #easy-bank .box-2 img {
+  width: 60px;
+  height: 60px;
+}
+main #easy-bank .box-2 h4 {
+  margin: 1.2rem 0;
+  color: hsl(233deg, 26%, 24%);
+}
+main #easy-bank .box-2 p {
+  font-size: 0.9rem;
+  line-height: 1.5;
+}
+main #articles {
+  background-color: hsl(0deg, 0%, 98%);
+}
+main #articles .card {
+  border: 0;
+}
+main #articles .card img {
+  width: 100%;
+  height: 30vh;
+}
+main #articles .card-name {
+  font-size: 0.7rem;
+  color: hsl(233deg, 8%, 62%);
+}
+main #articles .card-title {
+  font-size: 0.9rem;
+}
+main #articles .card-text {
+  color: hsl(233deg, 8%, 62%);
+  font-size: 0.8rem;
+}
+main #footer {
+  background-color: hsl(233deg, 26%, 24%);
+}
+main #footer .icons a {
+  margin-right: 7px;
+}
+main #footer .icons a:hover path {
+  fill: hsl(136deg, 65%, 51%);
+}
+main #footer .request-btn {
+  background: linear-gradient(to right, hsl(136deg, 65%, 51%), hsl(192deg, 70%, 51%));
+  color: hsl(0deg, 0%, 98%);
+  border-radius: 25px;
+  padding: 8px 30px;
+  margin-top: 7px;
+}
+main #footer .request-btn:hover {
+  background: linear-gradient(to right, hsl(136deg, 65%, 51%), hsl(136deg, 65%, 51%));
+}
+main #footer .footer2 ul {
+  margin-left: 6rem;
+}
+main #footer .footer2 ul li {
+  margin-bottom: 7px;
+  text-align: center;
+}
+main #footer .footer2 ul li:hover a {
+  color: hsl(136deg, 65%, 51%);
+}
+@media screen and (max-width: 768px) {
+  main #footer .footer2 ul {
+    padding: 0;
+  }
+}
+@media screen and (max-width: 768px) {
+  main #footer .footer2 ul {
+    margin-left: unset;
+  }
+}
+
+/*# sourceMappingURL=style.css.map */
